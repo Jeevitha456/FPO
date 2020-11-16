@@ -28,14 +28,14 @@ class FragmentMembers : Fragment() {
         val users = ArrayList<UserData>()
 
         //adding some dummy data to the list
-        users.add(UserData("Belal Khan", "Ranchi Jharkhand","J"))
-        users.add(UserData("Ramiz Khan", "Ranchi Jharkhand","P"))
-        users.add(UserData("Faiz Khan", "Ranchi Jharkhand","Y"))
-        users.add(UserData("Yashar Khan", "Ranchi Jharkhand","K"))
-        users.add(UserData("Yashar Khan", "Ranchi Jharkhand","K"))
-        users.add(UserData("Yashar Khan", "Ranchi Jharkhand","K"))
-        users.add(UserData("Yashar Khan", "Ranchi Jharkhand","K"))
-        users.add(UserData("Yashar Khan", "Ranchi Jharkhand","K"))
+        users.add(UserData("Rahul", "001","R","Female","Madurai","10","Wheat"))
+        users.add(UserData("Jeevitha", "002","J","Male","Chennai","11","Rice"))
+        users.add(UserData("Rashmi", "003","R","Male","Badami","12","Corn"))
+        users.add(UserData("Anush", "004","A","Female","Tumkur","13","Ragi"))
+        users.add(UserData("Lavanya", "005","L","Male","Chennai","14","Maidha"))
+        users.add(UserData("Vinith", "006","V","Male","Chennai","15","Flux seed"))
+        users.add(UserData("Kusum", "007","K","Male","Chennai","16","Sugarcane"))
+        users.add(UserData("Pavan", "008","P","Male","Chennai","17","Pumkin"))
 
 
 

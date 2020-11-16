@@ -5,13 +5,12 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-
     tools:context=".MainActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:id="@+id/appbar"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-
+android:fitsSystemWindows="true"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@+id/viewpager"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent">
         <com.google.android.material.appbar.CollapsingToolbarLayout
             android:layout_width="match_parent"
-            android:layout_height="208dp"
+            android:layout_height="wrap_content"
             android:id="@+id/collapsingToolbar"
             android:fitsSystemWindows="true"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
@@ -30,22 +29,31 @@
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
                 android:id="@+id/imagegreen"
+
+                android:fitsSystemWindows="true"
                 android:src="@drawable/background"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark"
                 app:layout_collapseMode="parallax"
                 app:layout_collapseParallaxMultiplier="0.7"/>
-
+            <View
+                android:id="@+id/overlay_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#6F000000"
+            android:scaleType="centerCrop"
+            />
             <androidx.appcompat.widget.Toolbar
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
+                android:layout_height="wrap_content"
                 android:layout_gravity="top"
-                android:layout_marginTop="43dp"
+                android:layout_marginTop="10dp"
+                app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <ImageView
                         android:id="@+id/backarrow"
@@ -71,7 +79,15 @@
                         app:layout_constraintLeft_toRightOf="@+id/backarrow"
                         tools:ignore="MissingConstraints"
                         tools:layout_editor_absoluteY="6dp" />
-
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="46dp"
+                        android:layout_marginRight="16dp"
+                        android:src="@drawable/bar_chart"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:ignore="MissingConstraints"
+                        tools:layout_editor_absoluteY="4dp" />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -85,7 +101,7 @@
                     <androidx.cardview.widget.CardView
                         android:id="@+id/search_bar"
                         android:layout_width="match_parent"
-                        android:layout_height="44dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="12dp"
                         android:background="@color/white"
                         app:cardCornerRadius="5dp"
@@ -112,6 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:id="@+id/tabs"
+                app:tabIndicatorHeight="4dp"
                 app:tabGravity="fill"
                 app:tabMode="scrollable"
                 app:tabTextAppearance="@style/TabTextAppearance"
@@ -122,8 +139,16 @@
     </com.google.android.material.appbar.AppBarLayout>
 
 
-
-        <androidx.viewpager.widget.ViewPager
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        app:elevation="6dp"
+        app:pressedTranslationZ="12dp"
+        android:layout_marginRight="19dp"
+        android:layout_marginBottom="50dp"
+        android:src="@drawable/plus"/>
+    <androidx.viewpager.widget.ViewPager
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

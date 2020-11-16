@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        collapsingToolbarLayout=findViewById(R.id.collapsingToolbar)
+       collapsingToolbarLayout=findViewById(R.id.collapsingToolbar)
         image=findViewById(R.id.imagegreen)
         toolbar=findViewById(R.id.toolbar)
         searchView=findViewById(R.id.searchview)
@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
           override fun onQueryTextSubmit(query: String?): Boolean {
               return false
           }
-
           override fun onQueryTextChange(newText: String?): Boolean {
               return false
           }
