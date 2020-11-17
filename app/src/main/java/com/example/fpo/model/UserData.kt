@@ -7,4 +7,5 @@ data class UserData(
     val gender: String,
     val villagename:String,
     val acreagename: String,
-    val cropname:String)
+    val cropname:String,
+   var expanded:Boolean)

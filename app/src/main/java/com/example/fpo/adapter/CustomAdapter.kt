@@ -8,10 +8,10 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.example.fpo.R
-import com.example.fpo.model.Globals
 import com.example.fpo.model.UserData
 
-class CustomAdapter(val userList: ArrayList<UserData>):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnItemClickListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var isExpanded:Boolean=false
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
             LayoutInflater.from(parent.context).inflate(R.layout.innerlayout, parent, false)
@@ -35,32 +35,23 @@ class CustomAdapter(val userList: ArrayList<UserData>):RecyclerView.Adapter<Recy
                 holder.textVillage.text = usermodel.villagename
                 holder.textAcreage.text = usermodel.acreagename
                 holder.textCrop.text = usermodel.cropname
+                isExpanded=usermodel.expanded
+                if(!usermodel.expanded)
+                {
+                    holder.layout1.isVisible=true
+                    holder.layout2.isVisible=false
+                }
+                else
+                {
+                    holder.layout2.isVisible=true
+                    holder.layout1.isVisible=false
+                }
             }
         }
-        holder.itemView.setOnClickListener() {
 
-
-           var expanded=Globals.getList()
-            // Change the state
-            if(expanded)
-            {
-                Globals.list(false)
-                notifyItemChanged(position);
-
-            }
-            else
-            {
-                Globals.list(true)
-                notifyItemChanged(position);
-
-            }
-
-
-
-        }
     }
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+   inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
        // lateinit var textImage: TextView
         lateinit var textCompanyName: TextView
         lateinit var textCompanyCurrency: TextView
@@ -89,17 +80,15 @@ class CustomAdapter(val userList: ArrayList<UserData>):RecyclerView.Adapter<Recy
 
                 layout1 = itemView.findViewById(R.id.profile) as ConstraintLayout
                 layout2 = itemView.findViewById(R.id.data) as ConstraintLayout
-                var expanded = Globals.getList()
-                if (expanded) {
-                    layout1.isVisible = false
-                    layout2.isVisible = true
-                } else {
-                    layout1.isVisible = true
-                    layout2.isVisible = false
-                }
+                itemView.setOnClickListener(this)
 
             }
 
+        }
+
+        override fun onClick(v: View?) {
+            val position=adapterPosition
+            listener.onItemClick(position,isExpanded)
         }
     }
 }
