@@ -5,4 +5,9 @@
     <string name="village">Village</string>
     <string name="acreage">Acreage</string>
     <string name="main_crops">MainCropsa</string>
+    <string name="query_hint">Search FPO members by name, crop, village etc</string>
+    <string name="membership">Membership</string>
+    <string name="profile_image">ProfileImage</string>
+    <string name="bod">BOD</string>
+    <string name="staffs">Staffs</string>
 </resources>

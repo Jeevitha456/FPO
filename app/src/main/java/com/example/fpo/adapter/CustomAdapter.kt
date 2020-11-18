@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.fpo.R
 import com.example.fpo.model.UserData
 
-class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnItemClickListener):RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private var isExpanded:Boolean=false
+class CustomAdapter(val userList: ArrayList<UserData>, private val listener: OnItemClickListener) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return ViewHolder(
-            LayoutInflater.from(parent.context).inflate(R.layout.innerlayout, parent, false)
+                LayoutInflater.from(parent.context).inflate(R.layout.innerlayout, parent, false)
         )
     }
 
@@ -35,24 +34,19 @@ class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnIte
                 holder.textVillage.text = usermodel.villagename
                 holder.textAcreage.text = usermodel.acreagename
                 holder.textCrop.text = usermodel.cropname
-                isExpanded=usermodel.expanded
-                if(!usermodel.expanded)
-                {
-                    holder.layout1.isVisible=true
-                    holder.layout2.isVisible=false
-                }
-                else
-                {
-                    holder.layout2.isVisible=true
-                    holder.layout1.isVisible=false
+                if (!usermodel.expanded) {
+                    holder.layout1.isVisible = true
+                    holder.layout2.isVisible = false
+                } else {
+                    holder.layout2.isVisible = true
+                    holder.layout1.isVisible = false
                 }
             }
         }
 
     }
 
-   inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),View.OnClickListener {
-       // lateinit var textImage: TextView
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener {
         lateinit var textCompanyName: TextView
         lateinit var textCompanyCurrency: TextView
         lateinit var textImage1: TextView
@@ -67,7 +61,6 @@ class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnIte
 
         init {
             run {
-                //textImage = itemView.findViewById(R.id.imageView1) as TextView
                 textCompanyName = itemView.findViewById(R.id.company_name) as TextView
                 textCompanyCurrency = itemView.findViewById(R.id.company_currency) as TextView
                 textImage1 = itemView.findViewById(R.id.imageView2) as TextView
@@ -87,7 +80,7 @@ class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnIte
         }
 
         override fun onClick(v: View?) {
-            val position=adapterPosition
+            val position = adapterPosition
             listener.onItemClick(position)
         }
     }
