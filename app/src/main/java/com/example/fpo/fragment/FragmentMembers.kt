@@ -50,12 +50,21 @@ class FragmentMembers : Fragment(),OnItemClickListener {
 
     }
 
-    override fun onItemClick(position: Int,isExpanded:Boolean) {
+    override fun onItemClick(position: Int) {
         var clickItem=users[position]
+        var temp=position
+        newvalue=temp
 
-        if(!isExpanded) {
+        if(!clickItem.expanded) {
             clickItem.expanded = true
             recyclerView.adapter?.notifyItemChanged(position)
+            if(oldvalue!=-1 && oldvalue!=newvalue)
+            {
+                var clickitemOld=users[oldvalue]
+                clickitemOld.expanded=false
+                recyclerView.adapter?.notifyItemChanged(oldvalue)
+            }
+            oldvalue=newvalue
         }
         else
         {

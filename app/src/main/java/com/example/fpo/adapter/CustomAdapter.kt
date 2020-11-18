@@ -88,7 +88,7 @@ class CustomAdapter(val userList: ArrayList<UserData>,private val listener:OnIte
 
         override fun onClick(v: View?) {
             val position=adapterPosition
-            listener.onItemClick(position,isExpanded)
+            listener.onItemClick(position)
         }
     }
 }

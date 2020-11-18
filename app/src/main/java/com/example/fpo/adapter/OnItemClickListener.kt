@@ -1,6 +1,6 @@
 package com.example.fpo.adapter
 
 interface OnItemClickListener {
-    fun onItemClick(position:Int,isExpanded:Boolean)
+    fun onItemClick(position:Int)
 
 }
