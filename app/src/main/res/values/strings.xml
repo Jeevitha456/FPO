@@ -13,7 +13,7 @@
     <string name="add_member">Add Member</string>
     <string name="basic_profile">Basic Profile</string>
     <string name="farm">Farm</string>
-    <string name="live_stock">Live Stock</string>
+    <string name="live_stock">Livestock</string>
     <string name="assests">Assests</string>
     <string name="house_hold">House Hold</string>
     <string name="bank">Bank</string>
@@ -35,4 +35,13 @@
     <string name="_address_proof">Address Proof</string>
     <string name="_identity_proof">Identity Proof</string>
     <string name="_upload_files">Upload Files</string>
+    <string name="_member">Member</string>
+    <string name="_plot_acreage">Plot Acreage</string>
+    <string name="_upload">Upload</string>
+    <string name="_plot_geolocation_file">Plot Geolocation File</string>
+    <string name="_livestock_type">Livestock Type</string>
+    <string name="_livestock_breed">Livestock Breed</string>
+    <string name="_livestock_count">Livestock Count</string>
+    <string name="_livestock_average_age">Livestock Average Age</string>
+    <string name="_livestock_insurance">Livestock Insurance</string>
 </resources>
