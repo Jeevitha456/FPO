@@ -12,21 +12,21 @@
         android:id="@+id/layout_household"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="@color/light_blue"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:background="@color/light_blue">
 
         <TextView
             android:id="@+id/household_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_14dp"
             android:layout_marginBottom="@dimen/_19dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_16dp"
+            android:text="@string/house_hold"
             android:textColor="@color/black"
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
-            android:text="@string/house_hold"
-            android:gravity="center_vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -42,4 +42,173 @@
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_houholdcarddetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_17dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:padding="@dimen/_16dp">
+
+        <TextView
+            android:id="@+id/householdcardtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14dp"
+            android:layout_marginBottom="@dimen/_19dp"
+            android:gravity="center_vertical"
+            android:text="@string/house_hold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_35dp"
+            android:gravity="center_vertical"
+            android:text="@string/save"
+            android:textColor="@color/drak_green"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintRight_toLeftOf="@+id/household_uparrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/household_uparrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:paddingTop="@dimen/_16dp"
+            android:src="@drawable/uparrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/householdcardtitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_household_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_member"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/householdcardtitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/manadatory_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:paddingStart="@dimen/_8dp"
+            android:src="@drawable/manadatory"
+            app:layout_constraintLeft_toRightOf="@+id/txt_household_member"
+            app:layout_constraintTop_toBottomOf="@id/householdcardtitle" />
+
+        <RelativeLayout
+            android:id="@+id/household_member_relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_household_member"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_household__member"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txt_male_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_male_members"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/household_member_relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__male_members"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_male_members"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_female_members"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:layout_marginRight="@dimen/_20dp"
+            android:gravity="center_vertical"
+            android:text="@string/_female_members"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/txt_male_members"
+            app:layout_constraintTop_toBottomOf="@id/household_member_relative_layout" />
+
+        <EditText
+            android:id="@+id/edt__female_members"
+            android:layout_width="@dimen/_100dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:layout_marginRight="@dimen/_20dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/edt__male_members"
+            app:layout_constraintTop_toBottomOf="@id/txt_female_members"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

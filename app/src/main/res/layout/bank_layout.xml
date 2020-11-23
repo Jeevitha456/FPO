@@ -12,21 +12,21 @@
         android:id="@+id/layout_bank"
         android:layout_width="match_parent"
         android:layout_height="52dp"
-        android:background="@color/light_blue"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:background="@color/light_blue">
 
         <TextView
             android:id="@+id/bank_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingStart="@dimen/_16dp"
             android:layout_marginTop="@dimen/_14dp"
             android:layout_marginBottom="@dimen/_19dp"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/_16dp"
+            android:text="@string/bank"
             android:textColor="@color/black"
             android:textSize="@dimen/_16sp"
             android:textStyle="bold"
-            android:text="@string/bank"
-            android:gravity="center_vertical"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.0" />
 
@@ -42,4 +42,321 @@
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_bank_carddetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_17dp"
+        android:background="@color/white"
+        android:padding="@dimen/_16dp"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/bankcardtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14dp"
+            android:layout_marginBottom="@dimen/_19dp"
+            android:gravity="center_vertical"
+            android:text="@string/bank"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_35dp"
+            android:gravity="center_vertical"
+            android:text="@string/save"
+            android:textColor="@color/drak_green"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintRight_toLeftOf="@+id/bank_uparrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/bank_uparrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:paddingTop="@dimen/_16dp"
+            android:src="@drawable/uparrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/bankcardtitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_bank_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_member"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/bankcardtitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/manadatory_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:paddingStart="@dimen/_8dp"
+            android:src="@drawable/manadatory"
+            app:layout_constraintLeft_toRightOf="@+id/txt_bank_member"
+            app:layout_constraintTop_toBottomOf="@id/bankcardtitle" />
+
+        <RelativeLayout
+            android:id="@+id/assest_member_relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_bank_member"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_bank__member"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_bank_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_bank_name"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/assest_member_relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__bank_name"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_bank_name"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_bank_branch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_bank_branch"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt__bank_name"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__bank_branch"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_bank_branch"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_account_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_account_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt__bank_branch"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:id="@+id/account_type__relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_account_type"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_account_type"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/txt_account_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_account_number"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/account_type__relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__account_number"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_account_number"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_ifsc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_ifsc"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt__account_number"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__ifsc"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="number"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_ifsc"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_bank_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_upload"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt__ifsc"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_check"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_upload"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintTop_toBottomOf="@id/txt_bank_upload"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/upload_bankfile"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:autofillHints="@string/_identity_proof"
+            android:background="@drawable/dotted_border"
+            android:drawableStart="@drawable/upload_icon"
+            android:drawableLeft="@drawable/upload_icon"
+            android:gravity="center_vertical"
+            android:inputType="none"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingLeft="100dp"
+            android:paddingEnd="@dimen/_8dp"
+            android:text="@string/_upload_files"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txt_check"
+            tools:ignore="LabelFor,MissingConstraints,RtlCompat"
+            tools:layout_editor_absoluteX="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

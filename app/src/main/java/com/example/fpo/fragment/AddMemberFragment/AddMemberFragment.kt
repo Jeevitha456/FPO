@@ -53,6 +53,18 @@ class AddMemberFragment : Fragment() {
     private lateinit var layout_assestDetails: ConstraintLayout
     private lateinit var assest_uparrow: ImageView
 
+    //household layout
+    private lateinit var edt_household_member: Spinner
+    private lateinit var layout_household: ConstraintLayout
+    private lateinit var layout_householdDetails: ConstraintLayout
+    private lateinit var household_uparrow: ImageView
+
+    //bank layout
+    private lateinit var edt_bank_member: Spinner
+    private lateinit var edt_account_type: Spinner
+    private lateinit var layout_bank: ConstraintLayout
+    private lateinit var layout_bankDetails: ConstraintLayout
+    private lateinit var bank_uparrow: ImageView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -75,7 +87,8 @@ class AddMemberFragment : Fragment() {
         edt_uploadaddress = rootview.findViewById(R.id.upload_addressfile) as EditText
         edt_uploadidentity = rootview.findViewById(R.id.upload_identityfile) as EditText
         basicprofile = rootview.findViewById(R.id.layout_basicprofile) as ConstraintLayout
-        basicprofileDetails = rootview.findViewById(R.id.layout_basicprofiledetails) as ConstraintLayout
+        basicprofileDetails =
+            rootview.findViewById(R.id.layout_basicprofiledetails) as ConstraintLayout
         basicprofile_uparrow = rootview.findViewById(R.id.basicprofile_uparrow) as ImageView
         basicprofilelayout()
 
@@ -87,23 +100,41 @@ class AddMemberFragment : Fragment() {
         farmlayout()
 
         //livestock
-        edt_livestock__member=rootview.findViewById(R.id.edt_livestock__member) as Spinner
-        edt_livestock__breed=rootview.findViewById(R.id.edt_livestock__breed) as Spinner
-        edt_livestock__count=rootview.findViewById(R.id.edt_livestock__count) as Spinner
+        edt_livestock__member = rootview.findViewById(R.id.edt_livestock__member) as Spinner
+        edt_livestock__breed = rootview.findViewById(R.id.edt_livestock__breed) as Spinner
+        edt_livestock__count = rootview.findViewById(R.id.edt_livestock__count) as Spinner
         layout_livestock = rootview.findViewById(R.id.layout_livestock) as ConstraintLayout
-        layout_livestockDetails = rootview.findViewById(R.id.layout_livestockdetails) as ConstraintLayout
+        layout_livestockDetails =
+            rootview.findViewById(R.id.layout_livestockdetails) as ConstraintLayout
         livestock_uparrow = rootview.findViewById(R.id.livestock_uparrow) as ImageView
         livestocklayout()
 
         //assets
-        edt_assest__member=rootview.findViewById(R.id.edt_assets__member) as Spinner
-        edt_assest__type=rootview.findViewById(R.id.edt_asset_type) as Spinner
-        edt_assest__status=rootview.findViewById(R.id.edt_status_type) as Spinner
+        edt_assest__member = rootview.findViewById(R.id.edt_assets__member) as Spinner
+        edt_assest__type = rootview.findViewById(R.id.edt_asset_type) as Spinner
+        edt_assest__status = rootview.findViewById(R.id.edt_status_type) as Spinner
         edt_acquired_on = rootview.findViewById(R.id.edt__aquired_on) as EditText
         layout_assest = rootview.findViewById(R.id.layout_assest) as ConstraintLayout
-        layout_assestDetails = rootview.findViewById(R.id.layout_assestcarddetails) as ConstraintLayout
+        layout_assestDetails =
+            rootview.findViewById(R.id.layout_assestcarddetails) as ConstraintLayout
         assest_uparrow = rootview.findViewById(R.id.assests_uparrow) as ImageView
         assestslayout()
+
+        //household
+        edt_household_member = rootview.findViewById(R.id.edt_household__member) as Spinner
+        layout_household = rootview.findViewById(R.id.layout_household) as ConstraintLayout
+        layout_householdDetails =
+            rootview.findViewById(R.id.layout_houholdcarddetails) as ConstraintLayout
+        household_uparrow = rootview.findViewById(R.id.household_uparrow) as ImageView
+        householdlayout()
+
+        //bank
+        edt_bank_member = rootview.findViewById(R.id.edt_bank__member) as Spinner
+        edt_account_type = rootview.findViewById(R.id.edt_account_type) as Spinner
+        layout_bank = rootview.findViewById(R.id.layout_bank) as ConstraintLayout
+        layout_bankDetails = rootview.findViewById(R.id.layout_bank_carddetails) as ConstraintLayout
+        bank_uparrow = rootview.findViewById(R.id.bank_uparrow) as ImageView
+        banklayout()
 
         setEventHandler()
         return rootview
@@ -119,6 +150,10 @@ class AddMemberFragment : Fragment() {
             layout_livestockDetails.visibility = View.GONE
             layout_assest.visibility = View.VISIBLE
             layout_assestDetails.visibility = View.GONE
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
         })
         basicprofile_uparrow.setOnClickListener({
             basicprofile.visibility = View.VISIBLE
@@ -134,6 +169,10 @@ class AddMemberFragment : Fragment() {
             layout_livestockDetails.visibility = View.GONE
             layout_assest.visibility = View.VISIBLE
             layout_assestDetails.visibility = View.GONE
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
         })
         farm_uparrow.setOnClickListener({
             layout_farm.visibility = View.VISIBLE
@@ -149,6 +188,10 @@ class AddMemberFragment : Fragment() {
             layout_farmDetails.visibility = View.GONE
             layout_assest.visibility = View.VISIBLE
             layout_assestDetails.visibility = View.GONE
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
         })
         livestock_uparrow.setOnClickListener({
             layout_livestock.visibility = View.VISIBLE
@@ -164,11 +207,131 @@ class AddMemberFragment : Fragment() {
             layout_farmDetails.visibility = View.GONE
             layout_livestock.visibility = View.VISIBLE
             layout_livestockDetails.visibility = View.GONE
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
         })
         assest_uparrow.setOnClickListener({
             layout_assest.visibility = View.VISIBLE
             layout_assestDetails.visibility = View.GONE
         })
+
+        layout_household.setOnClickListener({
+            layout_assest.visibility = View.GONE
+            layout_householdDetails.visibility = View.VISIBLE
+            basicprofileDetails.visibility = View.GONE
+            basicprofile.visibility = View.VISIBLE
+            layout_farm.visibility = View.VISIBLE
+            layout_farmDetails.visibility = View.GONE
+            layout_livestock.visibility = View.VISIBLE
+            layout_livestockDetails.visibility = View.GONE
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
+        })
+        household_uparrow.setOnClickListener({
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+        })
+
+        layout_bank.setOnClickListener({
+            layout_bank.visibility = View.GONE
+            layout_bankDetails.visibility = View.VISIBLE
+            basicprofileDetails.visibility = View.GONE
+            basicprofile.visibility = View.VISIBLE
+            layout_farm.visibility = View.VISIBLE
+            layout_farmDetails.visibility = View.GONE
+            layout_livestock.visibility = View.VISIBLE
+            layout_livestockDetails.visibility = View.GONE
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
+            layout_household.visibility = View.VISIBLE
+            layout_householdDetails.visibility = View.GONE
+        })
+        bank_uparrow.setOnClickListener({
+            layout_bank.visibility = View.VISIBLE
+            layout_bankDetails.visibility = View.GONE
+        })
+    }
+
+    private fun banklayout() {
+        val bankmemberOptions = arrayOf("Ayub Khan | 9986464166", "Jeevitha | 9900765378")
+        edt_bank_member?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                bankmemberOptions
+            )
+        } as SpinnerAdapter
+        edt_bank_member?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
+        val accounttypeOptions = arrayOf("")
+        edt_account_type?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                accounttypeOptions
+            )
+        } as SpinnerAdapter
+        edt_account_type?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
+    }
+
+    private fun householdlayout() {
+        val householdmemberOptions = arrayOf("Ayub Khan | 9986464166", "Jeevitha | 9900765378")
+        edt_household_member?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                householdmemberOptions
+            )
+        } as SpinnerAdapter
+        edt_household_member?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
     }
 
     private fun assestslayout() {
@@ -284,22 +447,23 @@ class AddMemberFragment : Fragment() {
                 livestockmemberOptions
             )
         } as SpinnerAdapter
-        edt_livestock__member?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                println("erreur")
-            }
+        edt_livestock__member?.onItemSelectedListener =
+            object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                    println("erreur")
+                }
 
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                val type = parent?.getItemAtPosition(position).toString()
-                println(type)
-            }
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    val type = parent?.getItemAtPosition(position).toString()
+                    println(type)
+                }
 
-        }
+            }
 
         val livestockbreedOptions = arrayOf("Select type")
         edt_livestock__breed?.adapter = activity?.applicationContext?.let {
@@ -326,7 +490,7 @@ class AddMemberFragment : Fragment() {
 
         }
 
-        val livestockcountOptions = arrayOf("2","3","4")
+        val livestockcountOptions = arrayOf("2", "3", "4")
         edt_livestock__count?.adapter = activity?.applicationContext?.let {
             ArrayAdapter(
                 it,
@@ -467,6 +631,7 @@ class AddMemberFragment : Fragment() {
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         edt_dob!!.setText(sdf.format(cal.time))
     }
+
     private fun updateDateInAssestView() {
         val myFormat = "MM/dd/yy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)

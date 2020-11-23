@@ -53,4 +53,12 @@
     <string name="_custom_hire_availability">Custom Hire Availability</string>
     <string name="_location">Location</string>
     <string name="_relavent_images">Relavant Images</string>
+    <string name="_male_members">Male Members</string>
+    <string name="_female_members">Female Members</string>
+    <string name="_bank_name">Bank Name</string>
+    <string name="_bank_branch">Bank Branch</string>
+    <string name="_account_type">Account Type</string>
+    <string name="_account_number">Account Number</string>
+    <string name="_ifsc">IFSC</string>
+    <string name="_passbook">Check/Passbook image</string>
 </resources>
