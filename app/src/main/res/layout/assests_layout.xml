@@ -41,5 +41,419 @@
             app:layout_constraintLeft_toRightOf="@+id/assets_title"
             tools:ignore="MissingConstraints" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_assestcarddetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/_17dp"
+        android:background="@color/white"
+        android:visibility="gone"
+        android:padding="@dimen/_16dp">
+
+        <TextView
+            android:id="@+id/assestscardtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_14dp"
+            android:layout_marginBottom="@dimen/_19dp"
+            android:gravity="center_vertical"
+            android:text="@string/assests"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12dp"
+            android:layout_marginEnd="@dimen/_35dp"
+            android:gravity="center_vertical"
+            android:text="@string/save"
+            android:textColor="@color/drak_green"
+            android:textSize="@dimen/_20sp"
+            app:layout_constraintRight_toLeftOf="@+id/assests_uparrow"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/assests_uparrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_20dp"
+            android:paddingTop="@dimen/_16dp"
+            android:src="@drawable/uparrow"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/assestscardtitle"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_assets_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_member"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/assestscardtitle"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/manadatory_member"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:paddingStart="@dimen/_8dp"
+            android:src="@drawable/manadatory"
+            app:layout_constraintLeft_toRightOf="@+id/txt_assets_member"
+            app:layout_constraintTop_toBottomOf="@id/assestscardtitle" />
+
+        <RelativeLayout
+            android:id="@+id/assest_member_relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_assets_member"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_assets__member"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/txt_assest_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_asset_type"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/assest_member_relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:id="@+id/asset_type__relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_assest_type"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_asset_type"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_aquired_on"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_aquired_on"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/asset_type__relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt__aquired_on"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:drawableEnd="@drawable/calender"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_aquired_on"
+            tools:ignore="Autofill,LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/txt_assest_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_assest_status"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt__aquired_on"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <RelativeLayout
+            android:id="@+id/asset_status__relative_layout"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_50dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/txt_assest_status"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="16dp">
+
+            <Spinner
+                android:id="@+id/edt_status_type"
+                android:layout_width="match_parent"
+                android:layout_height="38dp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:paddingEnd="@dimen/_8dp"
+                android:src="@drawable/dropdown" />
+
+        </RelativeLayout>
+        <TextView
+            android:id="@+id/txt_areaofthe_plot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_area_of_the_plot"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/asset_status__relative_layout"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_areaofthe_plot"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_areaofthe_plot"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/txt_asset_quantity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_assest_quantity"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt_areaofthe_plot"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_asset_quantity"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_asset_quantity"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_description"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt_asset_quantity"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_description"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_100dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_description"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/txt_custom_hire_availability"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_custom_hire_availability"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt_description"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_custom_hire_availability"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_custom_hire_availability"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+        <TextView
+            android:id="@+id/txt_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_location"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt_custom_hire_availability"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/edt_location"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:background="@drawable/custom_edittext"
+            android:gravity="center_vertical"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingEnd="@dimen/_8dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_location"
+            tools:ignore="LabelFor,MissingConstraints"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_assest_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_upload"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_14sp"
+            app:layout_constraintTop_toBottomOf="@id/edt_location"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txt_relavent_images"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_30dp"
+            android:gravity="center_vertical"
+            android:text="@string/_relavent_images"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/_16sp"
+            app:layout_constraintTop_toBottomOf="@id/txt_assest_upload"
+            app:layout_constraintVertical_bias="0.0"
+            tools:ignore="MissingConstraints" />
+        <EditText
+            android:id="@+id/upload_assestfile"
+            android:layout_width="@dimen/_300dp"
+            android:layout_height="@dimen/_45dp"
+            android:layout_marginTop="@dimen/_8dp"
+            android:autofillHints="@string/_identity_proof"
+            android:background="@drawable/dotted_border"
+            android:drawableStart="@drawable/upload_icon"
+            android:drawableLeft="@drawable/upload_icon"
+            android:gravity="center_vertical"
+            android:inputType="none"
+            android:paddingStart="@dimen/_16dp"
+            android:paddingLeft="100dp"
+            android:paddingEnd="@dimen/_8dp"
+            android:text="@string/_upload_files"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/txt_relavent_images"
+            tools:ignore="LabelFor,MissingConstraints,RtlCompat"
+            tools:layout_editor_absoluteX="16dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>

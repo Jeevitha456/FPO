@@ -44,4 +44,13 @@
     <string name="_livestock_count">Livestock Count</string>
     <string name="_livestock_average_age">Livestock Average Age</string>
     <string name="_livestock_insurance">Livestock Insurance</string>
+    <string name="_asset_type">Assest Type</string>
+    <string name="_aquired_on">Aquired On</string>
+    <string name="_assest_status">Assest Status</string>
+    <string name="_area_of_the_plot">Area of the plot</string>
+    <string name="_assest_quantity">Asset Quantity</string>
+    <string name="_description">Description</string>
+    <string name="_custom_hire_availability">Custom Hire Availability</string>
+    <string name="_location">Location</string>
+    <string name="_relavent_images">Relavant Images</string>
 </resources>

@@ -44,6 +44,15 @@ class AddMemberFragment : Fragment() {
     private lateinit var layout_livestockDetails: ConstraintLayout
     private lateinit var livestock_uparrow: ImageView
 
+    //assest layout
+    private lateinit var edt_assest__member: Spinner
+    private lateinit var edt_assest__type: Spinner
+    private lateinit var edt_assest__status: Spinner
+    private lateinit var edt_acquired_on: EditText
+    private lateinit var layout_assest: ConstraintLayout
+    private lateinit var layout_assestDetails: ConstraintLayout
+    private lateinit var assest_uparrow: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -85,6 +94,17 @@ class AddMemberFragment : Fragment() {
         layout_livestockDetails = rootview.findViewById(R.id.layout_livestockdetails) as ConstraintLayout
         livestock_uparrow = rootview.findViewById(R.id.livestock_uparrow) as ImageView
         livestocklayout()
+
+        //assets
+        edt_assest__member=rootview.findViewById(R.id.edt_assets__member) as Spinner
+        edt_assest__type=rootview.findViewById(R.id.edt_asset_type) as Spinner
+        edt_assest__status=rootview.findViewById(R.id.edt_status_type) as Spinner
+        edt_acquired_on = rootview.findViewById(R.id.edt__aquired_on) as EditText
+        layout_assest = rootview.findViewById(R.id.layout_assest) as ConstraintLayout
+        layout_assestDetails = rootview.findViewById(R.id.layout_assestcarddetails) as ConstraintLayout
+        assest_uparrow = rootview.findViewById(R.id.assests_uparrow) as ImageView
+        assestslayout()
+
         setEventHandler()
         return rootview
     }
@@ -97,6 +117,8 @@ class AddMemberFragment : Fragment() {
             layout_farm.visibility = View.VISIBLE
             layout_livestock.visibility = View.VISIBLE
             layout_livestockDetails.visibility = View.GONE
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
         })
         basicprofile_uparrow.setOnClickListener({
             basicprofile.visibility = View.VISIBLE
@@ -110,6 +132,8 @@ class AddMemberFragment : Fragment() {
             basicprofile.visibility = View.VISIBLE
             layout_livestock.visibility = View.VISIBLE
             layout_livestockDetails.visibility = View.GONE
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
         })
         farm_uparrow.setOnClickListener({
             layout_farm.visibility = View.VISIBLE
@@ -123,10 +147,131 @@ class AddMemberFragment : Fragment() {
             basicprofile.visibility = View.VISIBLE
             layout_farm.visibility = View.VISIBLE
             layout_farmDetails.visibility = View.GONE
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
         })
         livestock_uparrow.setOnClickListener({
             layout_livestock.visibility = View.VISIBLE
             layout_livestockDetails.visibility = View.GONE
+        })
+
+        layout_assest.setOnClickListener({
+            layout_assest.visibility = View.GONE
+            layout_assestDetails.visibility = View.VISIBLE
+            basicprofileDetails.visibility = View.GONE
+            basicprofile.visibility = View.VISIBLE
+            layout_farm.visibility = View.VISIBLE
+            layout_farmDetails.visibility = View.GONE
+            layout_livestock.visibility = View.VISIBLE
+            layout_livestockDetails.visibility = View.GONE
+        })
+        assest_uparrow.setOnClickListener({
+            layout_assest.visibility = View.VISIBLE
+            layout_assestDetails.visibility = View.GONE
+        })
+    }
+
+    private fun assestslayout() {
+        val assestsmemberOptions = arrayOf("Ayub Khan | 9986464166", "Jeevitha | 9900765378")
+        edt_assest__member?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                assestsmemberOptions
+            )
+        } as SpinnerAdapter
+        edt_assest__member?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
+
+        val assettypeOptions = arrayOf("Select type")
+        edt_assest__type?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                assettypeOptions
+            )
+        } as SpinnerAdapter
+        edt_assest__type?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
+
+        val assetstatusOptions = arrayOf("Select status")
+        edt_assest__status?.adapter = activity?.applicationContext?.let {
+            ArrayAdapter(
+                it,
+                R.layout.support_simple_spinner_dropdown_item,
+                assetstatusOptions
+            )
+        } as SpinnerAdapter
+        edt_assest__status?.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                println("erreur")
+            }
+
+            override fun onItemSelected(
+                parent: AdapterView<*>?,
+                view: View?,
+                position: Int,
+                id: Long
+            ) {
+                val type = parent?.getItemAtPosition(position).toString()
+                println(type)
+            }
+
+        }
+
+        val dateSetListener = object : DatePickerDialog.OnDateSetListener {
+            override fun onDateSet(
+                view: DatePicker, year: Int, monthOfYear: Int,
+                dayOfMonth: Int
+            ) {
+                cal.set(Calendar.YEAR, year)
+                cal.set(Calendar.MONTH, monthOfYear)
+                cal.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+                updateDateInAssestView()
+            }
+        }
+
+
+        edt_acquired_on!!.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(view: View) {
+                DatePickerDialog(
+                    requireContext(),
+                    dateSetListener,
+                    // set DatePickerDialog to point to today's date when it loads up
+                    cal.get(Calendar.YEAR),
+                    cal.get(Calendar.MONTH),
+                    cal.get(Calendar.DAY_OF_MONTH)
+                ).show()
+            }
+
         })
     }
 
@@ -321,6 +466,11 @@ class AddMemberFragment : Fragment() {
         val myFormat = "d MMM, yyyy" // mention the format you need
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         edt_dob!!.setText(sdf.format(cal.time))
+    }
+    private fun updateDateInAssestView() {
+        val myFormat = "MM/dd/yy" // mention the format you need
+        val sdf = SimpleDateFormat(myFormat, Locale.US)
+        edt_acquired_on!!.setText(sdf.format(cal.time))
     }
 
 }
