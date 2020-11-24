@@ -61,4 +61,6 @@
     <string name="_account_number">Account Number</string>
     <string name="_ifsc">IFSC</string>
     <string name="_passbook">Check/Passbook image</string>
+    <string name="_rabbi_crops">Select Rabi Crops (October - March)</string>
+    <string name="_kharif_crops">Select Kharif Crops (July - October)</string>
 </resources>
