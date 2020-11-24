@@ -11,7 +11,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layout_household"
         android:layout_width="match_parent"
-        android:layout_height="52dp"
+        android:layout_height="@dimen/_52dp"
         android:layout_gravity="center_horizontal"
         android:background="@color/light_blue">
 
@@ -49,8 +49,8 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/_17dp"
         android:background="@color/white"
-        android:visibility="gone"
-        android:padding="@dimen/_16dp">
+        android:padding="@dimen/_16dp"
+        android:visibility="gone">
 
         <TextView
             android:id="@+id/householdcardtitle"
@@ -184,7 +184,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30dp"
-            android:layout_marginRight="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_20dp"
             android:gravity="center_vertical"
             android:text="@string/_female_members"
             android:textColor="@color/black"
@@ -198,7 +198,7 @@
             android:layout_width="@dimen/_100dp"
             android:layout_height="@dimen/_45dp"
             android:layout_marginTop="@dimen/_8dp"
-            android:layout_marginRight="@dimen/_20dp"
+            android:layout_marginEnd="@dimen/_20dp"
             android:background="@drawable/custom_edittext"
             android:gravity="center_vertical"
             android:importantForAutofill="no"
