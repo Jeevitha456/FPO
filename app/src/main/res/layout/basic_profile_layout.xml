@@ -85,7 +85,7 @@
             android:id="@+id/basicprofile_uparrow"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_22.5dp"
+            android:layout_marginEnd="@dimen/_8dp"
             android:paddingTop="@dimen/_16dp"
             android:src="@drawable/uparrow"
             app:layout_constraintEnd_toEndOf="parent"
