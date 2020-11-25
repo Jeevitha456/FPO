@@ -9,12 +9,20 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.widget.NestedScrollView
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.fpo.R
+import com.example.fpo.adapter.*
+import com.example.fpo.model.KharfiData
+import com.example.fpo.model.LivestockData
+import com.example.fpo.model.RabiData
+import com.example.fpo.model.UserData
 import java.text.SimpleDateFormat
 import java.util.*
 
 
-class AddMemberFragment : Fragment() {
+class AddMemberFragment : Fragment(), OnFarmItemClickListener, OnItemClickListener, OnLivestockClickListener {
     private lateinit var nestedScrollView: NestedScrollView
     private lateinit var linearLayout: LinearLayout
 
@@ -35,6 +43,22 @@ class AddMemberFragment : Fragment() {
     private lateinit var layout_farm: ConstraintLayout
     private lateinit var layout_farmDetails: ConstraintLayout
     private lateinit var farm_uparrow: ImageView
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var rabi_crops: ArrayList<RabiData>
+    private lateinit var gridlayoutmanager: GridLayoutManager
+    private lateinit var kharfirecyclerView: RecyclerView
+    private lateinit var kharfi_crops: ArrayList<KharfiData>
+    private lateinit var kharfi_gridlayoutmanager: GridLayoutManager
+    private lateinit var livestockrecyclerView: RecyclerView
+    private lateinit var livestock_crops: ArrayList<LivestockData>
+    private lateinit var livestock_gridlayoutmanager: GridLayoutManager
+    private var oldvalue: Int = -1
+    private var newvalue: Int = -1
+    private var farmoldvalue: Int = -1
+    private var farmnewvalue: Int = -1
+    private var liveoldvalue: Int = -1
+    private var livestocknewvalue: Int = -1
+
 
     //livestock layout
     private lateinit var edt_livestock__member: Spinner
@@ -94,6 +118,10 @@ class AddMemberFragment : Fragment() {
         layout_farm = rootview.findViewById(R.id.layout_farm) as ConstraintLayout
         layout_farmDetails = rootview.findViewById(R.id.layout_farmdetails) as ConstraintLayout
         farm_uparrow = rootview.findViewById(R.id.farm_uparrow) as ImageView
+        recyclerView = rootview.findViewById(R.id.farm_rabi_recycler_view) as RecyclerView
+        kharfirecyclerView = rootview.findViewById(R.id.farm_kharfi_recycler_view) as RecyclerView
+        livestockrecyclerView = rootview.findViewById(R.id.farm_livestock_recycler_view) as RecyclerView
+
         farmlayout()
 
         //livestock
@@ -533,6 +561,68 @@ class AddMemberFragment : Fragment() {
             }
 
         }
+        rabi_crops = ArrayList<RabiData>()
+        rabi_crops.add(RabiData(R.drawable.wheat_icon, false))
+        rabi_crops.add(RabiData(R.drawable.potato_icon, false))
+        rabi_crops.add(RabiData(R.drawable.pomo_icon, false))
+        rabi_crops.add(RabiData(R.drawable.soyabean_icon, false))
+        rabi_crops.add(RabiData(R.drawable.watermelon_icon, false))
+        rabi_crops.add(RabiData(R.drawable.sugarcane_icon, false))
+        rabi_crops.add(RabiData(R.drawable.paddy_icon, false))
+        rabi_crops.add(RabiData(R.drawable.fruits_icon, false))
+        rabi_crops.add(RabiData(R.drawable.bananna_icon, false))
+        rabi_crops.add(RabiData(R.drawable.groundnut_icon, false))
+        rabi_crops.add(RabiData(R.drawable.tomato_icon, false))
+        rabi_crops.add(RabiData(R.drawable.vege_icon, false))
+        rabi_crops.add(RabiData(R.drawable.wheat_icon, false))
+        rabi_crops.add(RabiData(R.drawable.soyabean_icon, false))
+        rabi_crops.add(RabiData(R.drawable.paddy_icon, false))
+        rabi_crops.add(RabiData(R.drawable.groundnut_icon, false))
+        rabi_crops.add(RabiData(R.drawable.potato_icon, false))
+        rabi_crops.add(RabiData(R.drawable.watermelon_icon, false))
+        rabi_crops.add(RabiData(R.drawable.fruits_icon, false))
+        rabi_crops.add(RabiData(R.drawable.tomato_icon, false))
+        rabi_crops.add(RabiData(R.drawable.pomo_icon, false))
+        rabi_crops.add(RabiData(R.drawable.sugarcane_icon, false))
+        rabi_crops.add(RabiData(R.drawable.bananna_icon, false))
+        rabi_crops.add(RabiData(R.drawable.vege_icon, false))
+        gridlayoutmanager = GridLayoutManager(context, 3, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView.layoutManager = gridlayoutmanager
+        recyclerView.adapter = RabiAdapter(rabi_crops, this)
+
+        kharfi_crops = ArrayList<KharfiData>()
+        kharfi_crops.add(KharfiData(R.drawable.wheat_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.potato_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.pomo_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.soyabean_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.watermelon_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.sugarcane_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.paddy_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.fruits_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.bananna_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.groundnut_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.tomato_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.vege_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.wheat_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.soyabean_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.paddy_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.groundnut_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.potato_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.watermelon_icon, false))
+        kharfi_crops.add(KharfiData(R.drawable.fruits_icon, false))
+
+        kharfi_gridlayoutmanager = GridLayoutManager(context, 3, LinearLayoutManager.HORIZONTAL, false)
+        kharfirecyclerView.layoutManager = kharfi_gridlayoutmanager
+        kharfirecyclerView.adapter = KharfiAdapter(kharfi_crops, this)
+
+        livestock_crops = ArrayList<LivestockData>()
+        livestock_crops.add(LivestockData(R.drawable.dairy_icon, false))
+        livestock_crops.add(LivestockData(R.drawable.goat_icon, false))
+        livestock_crops.add(LivestockData(R.drawable.fish_icon, false))
+        livestock_crops.add(LivestockData(R.drawable.poultry_icon, false))
+        livestock_gridlayoutmanager = GridLayoutManager(context, 1, LinearLayoutManager.HORIZONTAL, false)
+        livestockrecyclerView.layoutManager = livestock_gridlayoutmanager
+        livestockrecyclerView.adapter = LiveStockAdapter(livestock_crops, this)
     }
 
 
@@ -629,5 +719,64 @@ class AddMemberFragment : Fragment() {
         val sdf = SimpleDateFormat(myFormat, Locale.US)
         edt_acquired_on.setText(sdf.format(cal.time))
     }
+
+    override fun onFarmItemClick(position: Int) {
+        val clickItem = kharfi_crops[position]
+        farmnewvalue = position
+
+        if (!clickItem.isSelected) {
+            clickItem.isSelected = true
+            kharfirecyclerView.adapter?.notifyItemChanged(position)
+            if (farmoldvalue != -1 && farmoldvalue != farmnewvalue) {
+                val clickitemOld = kharfi_crops[farmoldvalue]
+                clickitemOld.isSelected = false
+                kharfirecyclerView.adapter?.notifyItemChanged(farmoldvalue)
+            }
+            farmoldvalue = farmnewvalue
+        } else {
+            clickItem.isSelected = false
+            kharfirecyclerView.adapter?.notifyItemChanged(position)
+        }
+    }
+
+    override fun onItemClick(position: Int) {
+        val clickItem = rabi_crops[position]
+        newvalue = position
+
+        if (!clickItem.isSelected) {
+            clickItem.isSelected = true
+            recyclerView.adapter?.notifyItemChanged(position)
+            if (oldvalue != -1 && oldvalue != newvalue) {
+                val clickitemOld = rabi_crops[oldvalue]
+                clickitemOld.isSelected = false
+                recyclerView.adapter?.notifyItemChanged(oldvalue)
+            }
+            oldvalue = newvalue
+        } else {
+            clickItem.isSelected = false
+            recyclerView.adapter?.notifyItemChanged(position)
+        }
+    }
+
+    override fun onLivestockItemClick(position: Int) {
+
+        val clickItem = livestock_crops[position]
+        livestocknewvalue = position
+
+        if (!clickItem.isSelected) {
+            clickItem.isSelected = true
+            livestockrecyclerView.adapter?.notifyItemChanged(position)
+            if (liveoldvalue != -1 && liveoldvalue != livestocknewvalue) {
+                val clickitemOld = livestock_crops[liveoldvalue]
+                clickitemOld.isSelected = false
+                livestockrecyclerView.adapter?.notifyItemChanged(liveoldvalue)
+            }
+            liveoldvalue = livestocknewvalue
+        } else {
+            clickItem.isSelected = false
+            livestockrecyclerView.adapter?.notifyItemChanged(position)
+        }
+    }
+
 
 }

@@ -48,8 +48,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="@dimen/_17dp"
         android:background="@color/white"
-        android:padding="@dimen/_16dp"
-        android:visibility="gone">
+        android:padding="@dimen/_16dp">
 
         <TextView
             android:id="@+id/farmcardtitle"
@@ -235,153 +234,30 @@
             app:layout_constraintTop_toBottomOf="@id/upload_plot_geolocationfile"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_wheat"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_marginTop="@dimen/_14dp"
+            android:id="@+id/rabi_constraint_layout"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/wheat_icon"
-            app:layout_constraintTop_toBottomOf="@id/txt_rabi_crops"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="-3dp" />
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/txt_rabi_crops">
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_soyabean"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/soyabean_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_wheat"
-            app:layout_constraintTop_toBottomOf="@id/txt_rabi_crops"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_paddy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/paddy_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_soyabean"
-            app:layout_constraintTop_toBottomOf="@id/txt_rabi_crops"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_groundnut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/groundnut_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_paddy"
-            app:layout_constraintTop_toBottomOf="@id/txt_rabi_crops"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_potato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/potato_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/img_wheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_watermelon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/watermelon_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_potato"
-            app:layout_constraintTop_toBottomOf="@id/img_wheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_fruits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/fruits_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_watermelon"
-            app:layout_constraintTop_toBottomOf="@id/img_wheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_tomato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/tomato_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_fruits"
-            app:layout_constraintTop_toBottomOf="@id/img_wheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_rabi_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_45dp"
-            android:src="@drawable/right_arrow"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/img_tomato"
-            app:layout_constraintTop_toBottomOf="@id/img_wheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharfi_arrow"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_45dp"
-            android:src="@drawable/right_arrow"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintLeft_toRightOf="@+id/img_khariftomato"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifwheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_pomo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/pomo_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/img_potato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_sugarcane"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/sugarcane_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_pomo"
-            app:layout_constraintTop_toBottomOf="@id/img_potato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_banana"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/bananna_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_sugarcane"
-            app:layout_constraintTop_toBottomOf="@id/img_potato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_veg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/vege_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_banana"
-            app:layout_constraintTop_toBottomOf="@id/img_potato"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/farm_rabi_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
-            android:id="@+id/txt_kharif"
+            android:id="@+id/txt_kharfi_crops"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30dp"
@@ -390,132 +266,33 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/img_pomo"
+            app:layout_constraintTop_toBottomOf="@id/rabi_constraint_layout"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifwheat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
             android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/wheat_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/txt_kharif"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifsoyabean"
-            android:layout_width="wrap_content"
+            android:id="@+id/kharfi_constraint_layout"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/soyabean_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifwheat"
-            app:layout_constraintTop_toBottomOf="@id/txt_kharif"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifpaddy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/paddy_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifsoyabean"
-            app:layout_constraintTop_toBottomOf="@id/txt_kharif"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifgroundnut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/groundnut_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifpaddy"
-            app:layout_constraintTop_toBottomOf="@id/txt_kharif"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifpotato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/potato_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifwheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifwatermelon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/watermelon_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifpotato"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifwheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_khariffruits"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/fruits_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifwatermelon"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifwheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_khariftomato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/tomato_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_khariffruits"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifwheat"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifpomo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/pomo_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifpotato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifsugarcane"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/sugarcane_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifpomo"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifpotato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifbanana"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/bananna_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifsugarcane"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifpotato"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_kharifveg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:src="@drawable/vege_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_kharifbanana"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifpotato"/>
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/txt_kharfi_crops">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/farm_kharfi_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
         <TextView
-            android:id="@+id/txt_farm_livestock"
+            android:id="@+id/txt_farm_livestock_crops"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_30dp"
@@ -524,51 +301,30 @@
             android:textColor="@color/black"
             android:textSize="@dimen/_14sp"
             android:textStyle="bold"
-            app:layout_constraintTop_toBottomOf="@id/img_kharifpomo"
+            app:layout_constraintTop_toBottomOf="@id/kharfi_constraint_layout"
             app:layout_constraintVertical_bias="0.0"
             tools:ignore="MissingConstraints" />
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_dairy"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
             android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/dairy_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintTop_toBottomOf="@id/txt_farm_livestock"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_goat"
-            android:layout_width="wrap_content"
+            android:id="@+id/farm_livestock_constraint_layout"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/goat_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_dairy"
-            app:layout_constraintTop_toBottomOf="@id/txt_farm_livestock"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_fish"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/fish_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_goat"
-            app:layout_constraintTop_toBottomOf="@id/txt_farm_livestock"/>
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/img_poultry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/_6dp"
-            android:paddingTop="@dimen/_16dp"
-            android:layout_marginTop="@dimen/_14dp"
-            android:src="@drawable/poultry_icon"
-            tools:ignore="MissingConstraints"
-            app:layout_constraintLeft_toRightOf="@+id/img_fish"
-            app:layout_constraintTop_toBottomOf="@id/txt_farm_livestock"/>
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/txt_farm_livestock_crops">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/farm_livestock_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+       </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
